@@ -47,6 +47,7 @@ dependencies {
   implementation(libs.androidx.ui.graphics)
   implementation(libs.androidx.ui.tooling.preview)
   implementation(libs.androidx.material3)
+  implementation(libs.google.fonts)
   implementation(libs.lifecycle.viewmodel.compose)
   implementation(libs.material.icons.extended)
   testImplementation(libs.junit)

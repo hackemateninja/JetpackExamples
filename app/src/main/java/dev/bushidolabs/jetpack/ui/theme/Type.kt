@@ -1,93 +1,50 @@
 package dev.bushidolabs.jetpack.ui.theme
 
 import androidx.compose.material3.Typography
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.sp
+
+import androidx.compose.ui.text.googlefonts.GoogleFont
+import androidx.compose.ui.text.googlefonts.Font
 import dev.bushidolabs.jetpack.R
 
-private val fontFamilyKulim = FontFamily(
-  listOf(
-    Font(
-      resId = R.font.kulim_park_regular
-    ),
-    Font(
-      resId = R.font.kulim_park_light,
-      weight = FontWeight.Light
-    )
+val provider = GoogleFont.Provider(
+  providerAuthority = "com.google.android.gms.fonts",
+  providerPackage = "com.google.android.gms",
+  certificates = R.array.com_google_android_gms_fonts_certs
+)
+
+val bodyFontFamily = FontFamily(
+  Font(
+    googleFont = GoogleFont("IBM Plex Serif"),
+    fontProvider = provider,
   )
 )
 
-private val fontFamilyLato = FontFamily(
-  listOf(
-    Font(
-      resId = R.font.lato_regular
-    ),
-    Font(
-      resId = R.font.lato_bold,
-      weight = FontWeight.Bold
-    )
+val displayFontFamily = FontFamily(
+  Font(
+    googleFont = GoogleFont("IBM Plex Mono"),
+    fontProvider = provider,
   )
 )
 
-val typography = Typography(
-  displayLarge = TextStyle(
-    fontFamily = fontFamilyKulim,
-    fontWeight = FontWeight.Light,
-    fontSize = 57.sp,
-    lineHeight = 64.sp,
-    letterSpacing = (-0.25).sp
-  ),
-  displayMedium = TextStyle(
-    fontFamily = fontFamilyKulim,
-    fontSize = 45.sp,
-    lineHeight = 52.sp
-  ),
-  displaySmall = TextStyle(
-    fontFamily = fontFamilyKulim,
-    fontSize = 36.sp,
-    lineHeight = 44.sp
-  ),
-  titleMedium = TextStyle(
-    fontFamily = fontFamilyLato,
-    fontWeight = FontWeight(500),
-    fontSize = 16.sp,
-    lineHeight = 24.sp,
-    letterSpacing = (0.15).sp
-  ),
-  bodySmall = TextStyle(
-    fontFamily = fontFamilyLato,
-    fontSize = 12.sp,
-    lineHeight = 16.sp,
-    letterSpacing = (0.4).sp
-  ),
-  bodyMedium = TextStyle(
-    fontFamily = fontFamilyLato,
-    fontSize = 14.sp,
-    lineHeight = 20.sp,
-    letterSpacing = (0.25).sp
-  ),
-  bodyLarge = TextStyle(
-    fontFamily = fontFamilyLato,
-    fontSize = 16.sp,
-    lineHeight = 24.sp,
-    letterSpacing = (0.5).sp
-  ),
-  labelMedium = TextStyle(
-    fontFamily = fontFamilyLato,
-    fontWeight = FontWeight(500),
-    fontSize = 12.sp,
-    lineHeight = 16.sp,
-    letterSpacing = (0.5).sp,
-    textAlign = TextAlign.Center
-  ),
-  labelLarge = TextStyle(
-    fontFamily = fontFamilyLato,
-    fontSize = 14.sp,
-    lineHeight = 20.sp,
-    letterSpacing = (0.1).sp
-  )
+// Default Material 3 typography values
+val baseline = Typography()
+
+val AppTypography = Typography(
+  displayLarge = baseline.displayLarge.copy(fontFamily = displayFontFamily),
+  displayMedium = baseline.displayMedium.copy(fontFamily = displayFontFamily),
+  displaySmall = baseline.displaySmall.copy(fontFamily = displayFontFamily),
+  headlineLarge = baseline.headlineLarge.copy(fontFamily = displayFontFamily),
+  headlineMedium = baseline.headlineMedium.copy(fontFamily = displayFontFamily),
+  headlineSmall = baseline.headlineSmall.copy(fontFamily = displayFontFamily),
+  titleLarge = baseline.titleLarge.copy(fontFamily = displayFontFamily),
+  titleMedium = baseline.titleMedium.copy(fontFamily = displayFontFamily),
+  titleSmall = baseline.titleSmall.copy(fontFamily = displayFontFamily),
+  bodyLarge = baseline.bodyLarge.copy(fontFamily = bodyFontFamily),
+  bodyMedium = baseline.bodyMedium.copy(fontFamily = bodyFontFamily),
+  bodySmall = baseline.bodySmall.copy(fontFamily = bodyFontFamily),
+  labelLarge = baseline.labelLarge.copy(fontFamily = bodyFontFamily),
+  labelMedium = baseline.labelMedium.copy(fontFamily = bodyFontFamily),
+  labelSmall = baseline.labelSmall.copy(fontFamily = bodyFontFamily),
 )
+

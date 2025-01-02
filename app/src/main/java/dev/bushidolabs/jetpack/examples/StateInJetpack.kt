@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
+import dev.bushidolabs.jetpack.ui.theme.JetpackCourseTheme
 
 @Composable
 fun WaterCounter(modifier: Modifier = Modifier) {
@@ -104,7 +105,6 @@ class WellnessViewModel : ViewModel() {
 	
 }
 
-@Preview(showBackground = true)
 @Composable
 fun WellnessScreen(
 	modifier: Modifier = Modifier,
@@ -124,5 +124,13 @@ fun WellnessScreen(
 				)
 			}
 		}
+	}
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun WellnessScreenPreview(){
+	JetpackCourseTheme {
+		WellnessScreen()
 	}
 }
