@@ -115,8 +115,8 @@ val TOP_LEVEL_DESTINATIONS = listOf(
     ),
     ReplyTopLevelDestination(
         route = ReplyRoute.ARTICLES,
-        selectedIcon = Icons.Default.Article,
-        unselectedIcon = Icons.Default.Article,
+        selectedIcon = Icons.Filled.Article,
+        unselectedIcon = Icons.Filled.Article,
         iconTextId = R.string.tab_article
     ),
     ReplyTopLevelDestination(

@@ -46,10 +46,12 @@ class MainActivity : ComponentActivity() {
 
 @Preview(
 	uiMode = UI_MODE_NIGHT_YES,
+	showSystemUi = true,
 	name = "DefaultPreviewDark"
 )
 @Preview(
 	uiMode = UI_MODE_NIGHT_NO,
+	showSystemUi = true,
 	name = "DefaultPreviewLight"
 )
 @Composable
